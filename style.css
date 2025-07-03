@@ -1,0 +1,188 @@
+:root {
+  --cor-fundo: #111;
+  --cor-texto: #f1f1f1;
+  --cor-primaria: #ffd700;
+  --cor-secundaria: #333333;
+  --cor-hover: #ffaa00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Signika Negative", sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding-top: 80px; /* Ajuste conforme a altura do seu header */
+}
+
+header {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cor-secundaria);
+  z-index: 1000; /* Para manter o header acima de outros elementos */
+}
+
+header img {
+  height: 80px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.navbar a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--cor-primaria);
+}
+
+a {
+  font-size: 20px;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--cor-primaria);
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
+}
+
+.card {
+  background-color: var(--cor-secundaria);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+.card h3 {
+  color: var(--cor-hover);
+}
+
+.card p {
+  font-size: 0.9rem;
+}
+
+.sobre-nos {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--cor-secundaria);
+  margin-top: 2rem;
+}
+
+.sobre-nos h2 {
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--cor-secundaria);
+}
+
+.whatsapp-contato button {
+  background-color: var(--cor-primaria);
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-contato button:hover {
+  background-color: var(--cor-hover);
+}
+
+/* Ícone do menu */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+}
+
